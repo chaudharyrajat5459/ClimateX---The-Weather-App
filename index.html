@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ClimateX | The Smart Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <span>ClimateX</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#forecast">Forecast</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="themeBtn" class="theme-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>ClimateX</h1>
+            <h2>
+                Real-Time Weather Forecast Dashboard
+            </h2>
+            <p>
+                Search any city and get accurate weather updates,
+                hourly forecasts, temperature trends and weather insights.
+            </p>
+
+
+
+            <form id="searchForm" class="search-box">
+                <select id="citySelect" required>
+                    <option value="">Select City</option>
+                </select>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+            </form>
+            <button id="locationBtn" class="location-btn">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                Use Current Location
+            </button>
+        </div>
+    </section>
+
+
+
+    <section class="clock-section">
+
+        <div class="glass-card">
+
+            <h3>
+                <i class="fa-solid fa-clock"></i>
+                Local Time
+            </h3>
+            <h1 id="liveClock">
+                00:00:00
+            </h1>
+            <p id="currentDate">
+                Loading Date...
+            </p>
+        </div>
+    </section>
+
+
+
+    <section id="weather" class="weather-section">
+        <div class="main-weather-card glass-card">
+            <div class="weather-header">
+                <div>
+                    <h2 id="cityName">
+                        New Delhi
+                    </h2>
+                    <p id="weatherCondition">
+                        Clear Sky
+                    </p>
+                </div>
+                <div class="weather-icon">
+                    <i id="weatherIcon"
+                        class="fa-solid fa-sun">
+                    </i>
+                </div>
+            </div>
+            <div class="temperature">
+                <span id="temperature">
+                    28
+                </span>
+                <sup>°C</sup>
+            </div>
+            <div class="weather-tip">
+                <p id="weatherTip">
+                    Stay hydrated and enjoy your day.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card glass-card">
+                <i class="fa-solid fa-droplet"></i>
+                <h4>Humidity</h4>
+                <p id="humidity">--%</p>
+            </div>
+            <div class="stat-card glass-card">
+                <i class="fa-solid fa-wind"></i>
+                <h4>Wind Speed</h4>
+                <p id="windSpeed">-- km/h</p>
+            </div>
+            <div class="stat-card glass-card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <h4>Pressure</h4>
+                <p id="pressure">-- hPa</p>
+            </div>
+            <div class="stat-card glass-card">
+                <i class="fa-solid fa-eye"></i>
+                <h4>Visibility</h4>
+                <p id="visibility">-- km</p>
+            </div>
+            <div class="stat-card glass-card">
+                <i class="fa-solid fa-sun"></i>
+                <h4>UV Index</h4>
+                <p id="uvIndex">--</p>
+            </div>
+            <div class="stat-card glass-card">
+                <i class="fa-solid fa-leaf"></i>
+                <h4>Air Quality</h4>
+                <p id="airQuality">Good</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="recent-searches">
+        <div class="glass-card">
+            <h2>
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Recent Searches
+            </h2>
+            <div id="recentSearches"
+                class="recent-container">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="hourly-section">
+        <div class="glass-card">
+            <h2>
+                <i class="fa-solid fa-hourglass-half"></i>
+                Hourly Forecast
+            </h2>
+            <div id="hourlyForecast"
+                class="hourly-container">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="forecast"
+        class="forecast-section">
+        <div class="glass-card">
+            <h2>
+                <i class="fa-solid fa-calendar-days"></i>
+                5 Day Forecast
+            </h2>
+            <div id="forecastContainer"
+                class="forecast-grid">
+            </div>
+        </div>
+    </section>
+
+
+
+    <div id="loader"
+        class="loader-container hidden">
+        <div class="loader"></div>
+        <p>Fetching Weather Data...</p>
+    </div>
+
+
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>ClimateX</h2>
+            <p>
+                Smart Weather Forecast Dashboard
+            </p>
+            <div class="footer-icons">
+                <i class="fa-solid fa-cloud"></i>
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-cloud-rain"></i>
+            </div>
+            <p>
+                © 2026 ClimateX. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
